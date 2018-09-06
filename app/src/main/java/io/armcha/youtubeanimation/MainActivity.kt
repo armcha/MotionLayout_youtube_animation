@@ -2,6 +2,8 @@ package io.armcha.youtubeanimation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,6 +14,10 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                     .add(R.id.container, VideoFragment())
                     .commit()
+        }
+        recyclerview.apply {
+            adapter = SimpleAdapter()
+            layoutManager = LinearLayoutManager(this@MainActivity)
         }
     }
 }
