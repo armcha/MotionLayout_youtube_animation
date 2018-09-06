@@ -15,16 +15,17 @@ import androidx.constraintlayout.motion.widget.MotionLayout
  *
  */
 
-class SingleTouchableMotionLayout(context: Context, attributeSet: AttributeSet? = null) : MotionLayout(context, attributeSet) {
+class SingleViewTouchableMotionLayout(context: Context, attributeSet: AttributeSet? = null) : MotionLayout(context, attributeSet) {
 
     private val viewToDetectTouch by lazy {
         findViewById<View>(R.id.videoView) //TODO move to Attributes
     }
     private val viewRect = Rect()
     private var touchStarted = false
+    private val transitionListenerList = mutableListOf<TransitionListener?>()
 
     init {
-        setTransitionListener(object : MotionLayout.TransitionListener {
+        addTransitionListener(object : MotionLayout.TransitionListener {
             override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {
             }
 
@@ -33,6 +34,26 @@ class SingleTouchableMotionLayout(context: Context, attributeSet: AttributeSet? 
                 Log.e("onTransitionCompleted ", "onTransitionCompleted $currentState")
             }
         })
+
+        super.setTransitionListener(object : MotionLayout.TransitionListener {
+            override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {
+                transitionListenerList.filterNotNull()
+                        .forEach { it.onTransitionChange(p0, p1, p2, p3) }
+            }
+
+            override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
+                transitionListenerList.filterNotNull()
+                        .forEach { it.onTransitionCompleted(p0, p1) }
+            }
+        })
+    }
+
+    override fun setTransitionListener(listener: TransitionListener?) {
+        addTransitionListener(listener)
+    }
+
+    fun addTransitionListener(listener: TransitionListener?) {
+        transitionListenerList += listener
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {

@@ -8,7 +8,7 @@
 
         <OnSwipe
             app:dragDirection="dragUp"
-            app:touchAnchorId="@id/videoView"
+            app:touchAnchorId="@+id/videoView"
             app:touchAnchorSide="top" />
     </Transition>
 
@@ -27,13 +27,10 @@
             android:id="@id/content"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@android:color/darker_gray"
-            android:clickable="true"
-            android:focusable="true"
             android:layout_marginStart="0dp"
             android:layout_marginEnd="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/videoView" />
 
@@ -46,24 +43,20 @@
             android:layout_height="60dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="0dp"
+            android:layout_marginBottom="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
         <Constraint
             android:id="@id/content"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@android:color/darker_gray"
-            android:clickable="true"
-            android:focusable="true"
+            android:layout_height="1px"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/videoView" />
+            app:layout_constraintTop_toTopOf="@+id/videoView" />
 
     </ConstraintSet>
 

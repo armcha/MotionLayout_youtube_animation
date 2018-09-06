@@ -19,5 +19,16 @@ class VideoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        videoMotionLayout.addTransitionListener(object : MotionLayout.TransitionListener {
+            override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {
+                val mainActivity = activity as MainActivity
+                mainActivity.mainMotionLayout.progress = Math.abs(p3)
+            }
+
+            override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
+                Log.e("onTransitionCompleted ", "VideoFragment")
+            }
+        })
     }
 }

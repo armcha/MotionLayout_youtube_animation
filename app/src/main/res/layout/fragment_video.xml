@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<io.armcha.youtubeanimation.SingleTouchableMotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<io.armcha.youtubeanimation.SingleViewTouchableMotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/videoMotionLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
-    app:layoutDescription="@xml/youtube_scene">
+    app:layoutDescription="@xml/youtube_scene"
+    app:showPaths="true">
 
     <ImageView
         android:id="@+id/videoView"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_marginBottom="-1dp"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
         android:src="@drawable/background_video"
@@ -19,28 +19,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@android:color/darker_gray"
         android:clickable="true"
         android:focusable="true"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/videoView">
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:elevation="10dp"
-            android:text="Text"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
-    </FrameLayout>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-</io.armcha.youtubeanimation.SingleTouchableMotionLayout>
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lorem"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+        </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</io.armcha.youtubeanimation.SingleViewTouchableMotionLayout>
