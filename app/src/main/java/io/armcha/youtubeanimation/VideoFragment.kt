@@ -21,7 +21,7 @@ class VideoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         video_recyclerview.apply {
-            adapter = SimpleAdapter()
+            adapter = SimpleVideoDetailAdapter()
             layoutManager = LinearLayoutManager(activity)
         }
         videoMotionLayout.addTransitionListener(object : MotionLayout.TransitionListener {

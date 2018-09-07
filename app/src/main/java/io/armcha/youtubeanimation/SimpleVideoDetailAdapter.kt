@@ -5,12 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class SimpleAdapter(private val clickListener: View.OnClickListener) : RecyclerView.Adapter<SimpleAdapter.ViewHolder>() {
+class SimpleVideoDetailAdapter : RecyclerView.Adapter<SimpleVideoDetailAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val holder = ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.main_videos_item_view, parent, false))
-        holder.itemView.setOnClickListener(clickListener)
-        return holder
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.detail_video_item_view, parent, false))
     }
 
     override fun getItemCount(): Int = 50
@@ -19,4 +17,3 @@ class SimpleAdapter(private val clickListener: View.OnClickListener) : RecyclerV
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 }
-

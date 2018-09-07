@@ -8,49 +8,23 @@
 
         <KeyFrameSet>
             <KeyAttribute
-                app:framePosition="25"
-                app:target="@id/bottomNavigationView">
-                <CustomAttribute
-                    app:attributeName="translationY"
-                    app:customDimension="50dp" />
-            </KeyAttribute>
-
-            <KeyAttribute
-                app:framePosition="100"
+                app:framePosition="0"
                 app:target="@id/bottomNavigationView">
                 <CustomAttribute
                     app:attributeName="translationY"
                     app:customDimension="0dp" />
             </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="75"
+                app:target="@id/bottomNavigationView">
+                <CustomAttribute
+                    app:attributeName="translationY"
+                    app:customDimension="50dp" />
+            </KeyAttribute>
         </KeyFrameSet>
     </Transition>
 
-    <ConstraintSet android:id="@+id/expanded">
-
-        <Constraint
-            android:id="@id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-
-        </Constraint>
-    </ConstraintSet>
-
-    <ConstraintSet android:id="@+id/collapsed">
-
-        <Constraint
-            android:id="@id/bottomNavigationView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-
-        </Constraint>
-
-    </ConstraintSet>
-
+    <ConstraintSet android:id="@+id/expanded" />
+    <ConstraintSet android:id="@+id/collapsed" />
 </MotionScene>

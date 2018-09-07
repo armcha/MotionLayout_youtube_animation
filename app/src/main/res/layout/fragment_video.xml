@@ -9,27 +9,37 @@
     app:layout_collapseMode="parallax"
     app:showPaths="true">
 
-    <ImageView
-        android:id="@+id/videoView"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/videoViewContainer"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:contentDescription="@null"
-        android:scaleType="centerCrop"
-        android:src="@drawable/background_video"
+        app:cardCornerRadius="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <io.armcha.youtubeanimation.VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_video" />
+
+    </androidx.cardview.widget.CardView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="0dp"
         android:clickable="true"
+        android:elevation="10dp"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/videoView">
+        app:layout_constraintTop_toBottomOf="@+id/videoViewContainer">
 
         <!--<View-->
         <!--android:layout_width="match_parent"-->

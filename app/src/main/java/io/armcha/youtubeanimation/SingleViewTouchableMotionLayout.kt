@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Rect
 import android.util.AttributeSet
 import android.util.Log
+import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import androidx.constraintlayout.motion.widget.MotionLayout
@@ -18,7 +19,7 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 class SingleViewTouchableMotionLayout(context: Context, attributeSet: AttributeSet? = null) : MotionLayout(context, attributeSet) {
 
     private val viewToDetectTouch by lazy {
-        findViewById<View>(R.id.videoView) //TODO move to Attributes
+        findViewById<View>(R.id.videoViewContainer) //TODO move to Attributes
     }
     private val viewRect = Rect()
     private var touchStarted = false
@@ -46,6 +47,11 @@ class SingleViewTouchableMotionLayout(context: Context, attributeSet: AttributeS
                         .forEach { it.onTransitionCompleted(p0, p1) }
             }
         })
+
+//        setOnClickListener {
+//            Log.e("setOnClickListener ", "setOnClickListener")
+//            transitionToStart()
+//        }
     }
 
     override fun setTransitionListener(listener: TransitionListener?) {
@@ -56,7 +62,15 @@ class SingleViewTouchableMotionLayout(context: Context, attributeSet: AttributeS
         transitionListenerList += listener
     }
 
+    private val gestureDetector = GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
+        override fun onSingleTapConfirmed(e: MotionEvent?): Boolean {
+            transitionToEnd()
+            return false
+        }
+    })
+
     override fun onTouchEvent(event: MotionEvent): Boolean {
+        //gestureDetector.onTouchEvent(event)
         when (event.actionMasked) {
             MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                 touchStarted = false
