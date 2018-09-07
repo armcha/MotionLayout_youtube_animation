@@ -20,7 +20,7 @@ class VideoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        video_recyclerview.apply {
+        videoRecyclerView.apply {
             adapter = SimpleVideoDetailAdapter()
             layoutManager = LinearLayoutManager(activity)
         }

@@ -8,6 +8,7 @@ import android.view.GestureDetector
 import android.view.MotionEvent
 import android.view.View
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.recyclerview.widget.RecyclerView
 
 
 /**
@@ -47,11 +48,6 @@ class SingleViewTouchableMotionLayout(context: Context, attributeSet: AttributeS
                         .forEach { it.onTransitionCompleted(p0, p1) }
             }
         })
-
-//        setOnClickListener {
-//            Log.e("setOnClickListener ", "setOnClickListener")
-//            transitionToStart()
-//        }
     }
 
     override fun setTransitionListener(listener: TransitionListener?) {

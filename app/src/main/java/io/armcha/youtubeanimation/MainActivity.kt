@@ -24,5 +24,8 @@ class MainActivity : AppCompatActivity() {
             })
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
+        bottomNavigationView.setOnNavigationItemSelectedListener {
+            true
+        }
     }
 }

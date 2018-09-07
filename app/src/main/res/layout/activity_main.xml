@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/main_scene">
 
+    <View
+        android:id="@+id/backgroundDim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp" />
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
@@ -20,15 +26,20 @@
             android:theme="@style/ThemeOverlay.AppCompat.Light"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_youtube_logo" />
+
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_youtube_logo"
-                android:drawablePadding="5dp"
                 android:gravity="center"
                 android:text="YouTube"
-                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:textColor="@color/black"
+                android:textSize="23sp"
                 android:textStyle="bold" />
 
         </androidx.appcompat.widget.Toolbar>

@@ -22,6 +22,22 @@
                     app:attributeName="translationY"
                     app:customDimension="50dp" />
             </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="100"
+                app:target="@id/backgroundDim">
+                <CustomAttribute
+                    app:attributeName="BackgroundColor"
+                    app:customColorValue="@color/semiGray" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="0"
+                app:target="@id/backgroundDim">
+                <CustomAttribute
+                    app:attributeName="BackgroundColor"
+                    app:customColorValue="@android:color/transparent" />
+            </KeyAttribute>
         </KeyFrameSet>
     </Transition>
 

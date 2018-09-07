@@ -7,4 +7,6 @@
     <color name="black">#000</color>
     <color name="gray">#969696</color>
     <color name="red">#d50000</color>
+    <color name="semiGray">#424242</color>
+    <color name="youtubeRed">#d50000</color>
 </resources>

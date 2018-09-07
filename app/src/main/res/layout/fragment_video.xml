@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
-    app:layoutDescription="@xml/youtube_scene"
     app:layout_collapseMode="parallax"
+app:layoutDescription="@xml/youtube_scene"
     app:showPaths="true">
 
     <androidx.cardview.widget.CardView
@@ -14,19 +14,26 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         app:cardCornerRadius="0dp"
+        app:cardUseCompatPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <io.armcha.youtubeanimation.VideoView
-            android:id="@+id/videoView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@null"
-            android:scaleType="centerCrop"
-            android:src="@drawable/background_video" />
 
     </androidx.cardview.widget.CardView>
+
+    <io.armcha.youtubeanimation.VideoView
+        android:id="@+id/videoView"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:contentDescription="@null"
+        android:elevation="10dp"
+        android:scaleType="centerCrop"
+        android:paddingRight="@dimen/video_view_right_padding"
+        android:src="@drawable/background_video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/content"
@@ -35,6 +42,7 @@
         android:layout_marginTop="0dp"
         android:clickable="true"
         android:elevation="10dp"
+        android:background="@color/red"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +58,7 @@
         <!--app:layout_constraintTop_toTopOf="parent" />-->
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/video_recyclerview"
+            android:id="@+id/videoRecyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:nestedScrollingEnabled="false"
@@ -60,5 +68,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<androidx.constraintlayout.widget.Guideline-->
+        <!--android:id="@+id/guideline"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="vertical"-->
+        <!--app:layout_constraintGuide_begin="150dp" />-->
 
 </io.armcha.youtubeanimation.SingleViewTouchableMotionLayout>
