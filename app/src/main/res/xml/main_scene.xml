@@ -20,7 +20,7 @@
                 app:target="@id/bottomNavigationView">
                 <CustomAttribute
                     app:attributeName="translationY"
-                    app:customDimension="50dp" />
+                    app:customDimension="55dp" />
             </KeyAttribute>
 
             <KeyAttribute

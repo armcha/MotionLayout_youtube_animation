@@ -42,6 +42,23 @@
                 android:alpha="1"
                 app:target="@id/videoRecyclerView">
             </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="0"
+                app:target="@id/videoViewContainer">
+                <CustomAttribute
+                    app:attributeName="cardElevation"
+                    app:customDimension="5dp" />
+            </KeyAttribute>
+
+            <KeyAttribute
+                app:framePosition="3"
+                app:target="@id/videoViewContainer">
+                <CustomAttribute
+                    app:attributeName="cardElevation"
+                    app:customDimension="0dp" />
+            </KeyAttribute>
+
         </KeyFrameSet>
     </Transition>
 
@@ -56,22 +73,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
-
-            <CustomAttribute
-                app:attributeName="cardElevation"
-                app:customDimension="0dp" />
         </Constraint>
-
-        <!--<Constraint-->
-            <!--android:id="@id/videoRecyclerView"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="0dp"-->
-            <!--android:layout_marginStart="0dp"-->
-            <!--android:layout_marginEnd="0dp"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toBottomOf="@+id/videoViewContainer" />-->
 
         <Constraint
             android:id="@id/content"
@@ -101,48 +103,35 @@
         <Constraint
             android:id="@id/videoViewContainer"
             android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="65dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
-            <CustomAttribute
-                app:attributeName="cardElevation"
-                app:customDimension="5dp" />
         </Constraint>
 
         <Constraint
             android:id="@id/videoView"
             android:layout_height="60dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="65dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <!--<Constraint-->
-            <!--android:id="@id/videoRecyclerView"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="-1dp"-->
-            <!--android:layout_marginStart="16dp"-->
-            <!--android:layout_marginEnd="16dp"-->
-            <!--app:layout_constraintBottom_toBottomOf="parent"-->
-            <!--app:layout_constraintEnd_toEndOf="parent"-->
-            <!--app:layout_constraintStart_toStartOf="parent"-->
-            <!--app:layout_constraintTop_toTopOf="@+id/videoViewContainer" />-->
-
         <Constraint
             android:id="@id/content"
             android:layout_width="match_parent"
             android:layout_height="-1dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="66dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/videoViewContainer" />
+            app:layout_constraintTop_toBottomOf="@+id/videoViewContainer" />
 
     </ConstraintSet>
 

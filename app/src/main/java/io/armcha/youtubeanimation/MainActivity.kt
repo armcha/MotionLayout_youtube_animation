@@ -21,11 +21,8 @@ class MainActivity : AppCompatActivity() {
             adapter = SimpleAdapter(View.OnClickListener {
                 val videoFragment = supportFragmentManager.findFragmentById(R.id.container) as VideoFragment
                 videoFragment.videoMotionLayout.transitionToEnd()
-            })
+            },layoutResId = R.layout.main_videos_item_view)
             layoutManager = LinearLayoutManager(this@MainActivity)
-        }
-        bottomNavigationView.setOnNavigationItemSelectedListener {
-            true
         }
     }
 }
