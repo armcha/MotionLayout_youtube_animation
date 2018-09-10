@@ -33,7 +33,6 @@ class SingleViewTouchableMotionLayout(context: Context, attributeSet: AttributeS
 
             override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
                 touchStarted = false
-                Log.e("onTransitionCompleted ", "onTransitionCompleted $currentState")
             }
         })
 
@@ -73,7 +72,6 @@ class SingleViewTouchableMotionLayout(context: Context, attributeSet: AttributeS
                 return super.onTouchEvent(event)
             }
         }
-        Log.e("onTouchEvent ", "actionMasked ${event.actionMasked}")
         if (!touchStarted) {
             viewToDetectTouch.getHitRect(viewRect)
             touchStarted = viewRect.contains(event.x.toInt(), event.y.toInt())

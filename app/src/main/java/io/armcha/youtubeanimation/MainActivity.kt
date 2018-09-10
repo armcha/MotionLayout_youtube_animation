@@ -24,5 +24,6 @@ class MainActivity : AppCompatActivity() {
             },layoutResId = R.layout.main_videos_item_view)
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
+
     }
 }

@@ -5,7 +5,7 @@
     <Transition
         app:constraintSetEnd="@id/expanded"
         app:constraintSetStart="@id/collapsed"
-        app:duration="350"
+        app:duration="300"
         app:interpolator="easeInOut">
 
         <OnSwipe
@@ -32,16 +32,14 @@
             </KeyAttribute>
 
             <KeyAttribute
-                app:framePosition="0"
                 android:alpha="0"
-                app:target="@id/videoRecyclerView">
-            </KeyAttribute>
+                app:framePosition="0"
+                app:target="@id/videoRecyclerView" />
 
             <KeyAttribute
-                app:framePosition="100"
                 android:alpha="1"
-                app:target="@id/videoRecyclerView">
-            </KeyAttribute>
+                app:framePosition="100"
+                app:target="@id/videoRecyclerView" />
 
             <KeyAttribute
                 app:framePosition="0"
@@ -72,8 +70,7 @@
             android:layout_marginBottom="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-        </Constraint>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Constraint
             android:id="@id/content"
@@ -86,34 +83,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/videoViewContainer" />
 
-        <Constraint
-            android:id="@id/videoView"
-            android:layout_height="250dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/collapsed">
 
         <Constraint
             android:id="@id/videoViewContainer"
-            android:layout_height="60dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="65dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-        </Constraint>
-
-        <Constraint
-            android:id="@id/videoView"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="65dp"

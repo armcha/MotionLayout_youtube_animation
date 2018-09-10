@@ -4,8 +4,8 @@ object DataSource {
 
     val items by lazy {
         mutableListOf<Item>().apply {
-            repeat(25) {
-//                add(Item("Strawberries", "https://cdn.pixabay.com/photo/2016/05/16/17/59/strawberries-1396330_640.jpg"))
+            repeat(30) {
+                //                add(Item("Strawberries", "https://cdn.pixabay.com/photo/2016/05/16/17/59/strawberries-1396330_640.jpg"))
 //                add(Item("Flower", "https://cdn.pixabay.com/photo/2018/02/08/22/27/flower-3140492_640.jpg"))
 //                add(Item("Poppy", "https://cdn.pixabay.com/photo/2018/02/07/17/53/poppy-3137588_640.jpg"))
 //                add(Item("Dance", "https://cdn.pixabay.com/photo/2018/02/06/14/07/dance-3134828_640.jpg"))
@@ -30,8 +30,9 @@ object DataSource {
 //                add(Item("Gallery", "https://cdn.pixabay.com/photo/2018/01/28/17/48/gallery-3114279_640.jpg"))
 //                add(Item("Jeans", "https://cdn.pixabay.com/photo/2017/11/26/19/50/jeans-2979818_640.jpg"))
 //                add(Item("Food photography", "https://cdn.pixabay.com/photo/2017/10/09/19/29/food-photography-2834549_640.jpg"))
-//                add(Item("Polynesia", "https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_640.jpg"))
-//                add(Item("Girl", "https://cdn.pixabay.com/photo/2016/11/13/00/40/girl-1820122_640.jpg"))
+                add(Item("Polynesia", "https://antiscribe.files.wordpress.com/2012/07/dark-knight-looking-out-over-gotham.jpg"))
+                add(Item("Polynesia", "https://rapchieuphim.com/photos/2/phim-sieu-anh-hung-hay-nhat-16.png"))
+                add(Item("Girl", "https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/the-dark-knight-mourn.jpg"))
                 add(Item("Girl", "https://vignette.wikia.nocookie.net/1154b4c6-d018-4bc7-9d3a-33fd1d76acaf/scale-to-width-down/800"))
             }
         }
